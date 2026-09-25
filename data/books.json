@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1",
+    "titulo": "El Jugador",
+    "autor": "Fiódor Dostoyevski",
+    "anio": 1866,
+    "imagen": "/static/images/el-jugador.jpeg"
+  },
+  {
+    "id": "2",
+    "titulo": "El misterioso caso de Styles",
+    "autor": "Agatha Christie",
+    "anio": 1920,
+    "imagen": "/static/images/el-misterioso-caso-de-styles.jpg"
+  },
+  {
+    "id": "3",
+    "titulo": "El perfume",
+    "autor": "Patrick Süskind",
+    "anio": 1985,
+    "imagen": "/static/images/el-perfume.jpg"
+  },
+  {
+    "id": "4",
+    "titulo": "Linux Bible",
+    "autor": "Christopher Negus",
+    "anio": 2002,
+    "imagen": "/static/images/linux-bible.jpg"
+  },
+  {
+    "id": "5",
+    "titulo": "Las venas abiertas de América Latina",
+    "autor": "Eduardo Galeano",
+    "anio": 1971,
+    "imagen": "/static/images/las-venas-abiertas-de-america-latina.jpg"
+  },
+  {
+    "id": "6",
+    "titulo": "El mapa del alma según Jung",
+    "autor": "Murray Stein",
+    "anio": 2004,
+    "imagen": "/static/images/el-mapa-del-alma-segun-jung.jpg"
+  },
+  {
+    "id": "7",
+    "titulo": "Star Wars Los Secretos de los Cazarrecompensas",
+    "autor": "Marc Sumerak",
+    "anio": 2023,
+    "imagen": "/static/images/star-wars-los-secretos-de-los-cazadores-de-recompensas.jpeg"
+  },
+  {
+    "id": "8",
+    "titulo": "Dos veces Silvia",
+    "autor": "Silvia Valencia",
+    "anio": 2016,
+    "imagen": "/static/images/dos-veces-silvia.jpg"
+  },
+  {
+    "id": "9",
+    "titulo": "Memoria de mis putas tristes",
+    "autor": "Gabriel García Márquez",
+    "anio": 2004,
+    "imagen": "/static/images/memoria-de-mis-putas-tristes.jpeg"
+  },
+  {
+    "id": "10",
+    "titulo": "La ciudad y los perros",
+    "autor": "Mario Vargas Llosa",
+    "anio": 1963,
+    "imagen": "/static/images/la-ciudad-y-los-perros.jpg"
+  },
+  {
+    "id": "11",
+    "titulo": "Don Quijote de la Mancha",
+    "autor": "Miguel de Cervantes",
+    "anio": 1605,
+    "imagen": "/static/images/don-quijote-de-la-mancha.jpg"
+  },
+  {
+    "id": "12",
+    "titulo": "Leyendas",
+    "autor": "Gustavo Adolfo Bécquer",
+    "anio": 1871,
+    "imagen": "/static/images/leyendas.jpg"
+  }
+]

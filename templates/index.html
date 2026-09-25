@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{.AppName}}</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===================== ENCABEZADO ===================== -->
+<header class="dl-header sticky-top">
+    <div class="container-fluid">
+        <div class="row align-items-center gy-2 py-2">
+
+            <div class="col-auto">
+                <button id="brand-link" type="button" class="btn btn-link dl-brand text-decoration-none p-0">
+                    Debian Lee
+                </button>
+            </div>
+
+            <div class="col-12 col-md order-3 order-md-2">
+                <div class="input-group dl-search mx-md-3">
+                    <input type="text" id="search-input" class="form-control dl-search-input border-0" placeholder="Buscar" aria-label="Buscar libro">
+                    <button class="btn dl-search-btn" id="search-btn" type="button" aria-label="Buscar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-auto ms-md-auto order-2 order-md-3 d-flex align-items-center gap-3">
+                <span id="welcome-text" class="dl-welcome d-none d-sm-inline">Bienvenido, {{.Host}}</span>
+
+                <div class="dropdown dl-user-dropdown">
+                    <button id="user-icon-btn" type="button" class="btn btn-link p-0 dl-user-icon" aria-expanded="false" aria-label="Cuenta">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M6.5 19c1-2.5 3-4 5.5-4s4.5 1.5 5.5 4"/></svg>
+                    </button>
+
+                    <!-- Menú CRUD del administrador (se muestra/oculta con bootstrap.Dropdown) -->
+                    <ul class="dropdown-menu dropdown-menu-end dl-admin-menu p-2" id="modal-admin-menu">
+                        <li><button type="button" class="dropdown-item dl-menu-option rounded-pill mb-1" id="menu-add">Agregar un libro</button></li>
+                        <li><button type="button" class="dropdown-item dl-menu-option rounded-pill mb-1" id="menu-edit">Editar un libro</button></li>
+                        <li><button type="button" class="dropdown-item dl-menu-option rounded-pill mb-1" id="menu-delete">Eliminar un libro</button></li>
+                        <li><hr class="dropdown-divider my-1"></li>
+                        <li><button type="button" class="dropdown-item dl-menu-option dl-menu-logout rounded-pill" id="menu-logout">Cerrar sesión</button></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<!-- ===================== CONTENIDO PRINCIPAL ===================== -->
+<main class="dl-main container py-4 flex-grow-1">
+    <div id="app">
+        <div class="text-center py-5">
+            <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando…</span></div>
+        </div>
+    </div>
+</main>
+
+<!-- ===================== PIE DE PÁGINA ===================== -->
+<footer class="dl-footer mt-auto">
+    <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center py-2 gap-2">
+        <span class="fw-bold small mb-0">Grupo de trabajo: Juan Diego García Nieto, David Gómez Ramírez, Juan Sebastián Londoño Ramírez</span>
+        <span class="badge dl-server-badge" id="server-badge">Servidor: {{.ServerName}}</span>
+    </div>
+</footer>
+
+<!-- ===================== MODAL: Iniciar sesión (administrador) ===================== -->
+<div class="modal fade" id="modal-login" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content dl-popup">
+            <div class="dl-popup-title-bar">
+                <h2 class="dl-popup-title">Iniciar sesión</h2>
+            </div>
+            <div class="modal-body dl-popup-body">
+                <p class="dl-popup-hint">Ingresa la contraseña de administrador para gestionar el catálogo.</p>
+                <input type="password" id="login-password" class="form-control dl-input" placeholder="Contraseña">
+                <div class="dl-field-error" id="login-error"></div>
+            </div>
+            <div class="modal-footer dl-popup-actions border-0">
+                <button type="button" class="btn dl-btn dl-btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn dl-btn dl-btn-primary" id="login-submit">Entrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== MODAL: Crear libro ===================== -->
+<div class="modal fade" id="modal-create" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content dl-popup">
+            <div class="dl-popup-title-bar">
+                <h2 class="dl-popup-title">Crear libro</h2>
+            </div>
+            <div class="modal-body dl-popup-body">
+                <input type="text" id="create-titulo" class="form-control dl-input" placeholder="Nombre del libro">
+                <div class="dl-field-error" id="create-titulo-error"></div>
+
+                <input type="text" id="create-autor" class="form-control dl-input" placeholder="Autor del libro">
+                <div class="dl-field-error" id="create-autor-error"></div>
+
+                <input type="number" id="create-anio" class="form-control dl-input" placeholder="Fecha de publicación">
+                <div class="dl-field-error" id="create-anio-error"></div>
+
+                <label for="create-imagen" class="dl-file-label">
+                    <span id="create-imagen-label">Seleccionar portada del libro...</span>
+                </label>
+                <input type="file" id="create-imagen" accept="image/*" class="visually-hidden">
+                <div class="dl-field-error" id="create-imagen-error"></div>
+
+                <label for="create-texto" class="dl-file-label">
+                    <span id="create-texto-label">Seleccionar texto del libro (.txt o .pdf)...</span>
+                </label>
+                <input type="file" id="create-texto" accept=".txt,.pdf,text/plain,application/pdf" class="visually-hidden">
+                <div class="dl-field-error" id="create-texto-error"></div>
+            </div>
+            <div class="modal-footer dl-popup-actions-center border-0">
+                <button type="button" class="btn dl-btn dl-btn-primary" id="create-submit">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== MODAL: Editar libro ===================== -->
+<div class="modal fade" id="modal-edit" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content dl-popup">
+            <div class="dl-popup-title-bar">
+                <h2 class="dl-popup-title">Editar libro</h2>
+            </div>
+            <div class="modal-body dl-popup-body">
+                <p class="dl-popup-hint">Deja en blanco el campo que no quieras cambiar.</p>
+
+                <input type="text" id="edit-titulo" class="form-control dl-input" placeholder="Nombre del libro" data-touched="0">
+                <div class="dl-field-error" id="edit-titulo-error"></div>
+
+                <input type="text" id="edit-autor" class="form-control dl-input" placeholder="Autor del libro" data-touched="0">
+                <div class="dl-field-error" id="edit-autor-error"></div>
+
+                <input type="number" id="edit-anio" class="form-control dl-input" placeholder="Fecha de publicación" data-touched="0">
+                <div class="dl-field-error" id="edit-anio-error"></div>
+
+                <label for="edit-imagen" class="dl-file-label">
+                    <span id="edit-imagen-label">Seleccionar portada del libro...</span>
+                </label>
+                <input type="file" id="edit-imagen" accept="image/*" class="visually-hidden">
+                <div class="dl-field-error" id="edit-imagen-error"></div>
+
+                <label for="edit-texto" class="dl-file-label">
+                    <span id="edit-texto-label">Seleccionar texto del libro (.txt o .pdf)...</span>
+                </label>
+                <input type="file" id="edit-texto" accept=".txt,.pdf,text/plain,application/pdf" class="visually-hidden">
+                <div class="dl-field-error" id="edit-texto-error"></div>
+            </div>
+            <div class="modal-footer dl-popup-actions-center border-0">
+                <button type="button" class="btn dl-btn dl-btn-primary" id="edit-submit">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== MODAL: Confirmar eliminación ===================== -->
+<div class="modal fade" id="modal-delete-confirm" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content dl-popup dl-popup-confirm">
+            <div class="modal-body text-center">
+                <p class="dl-confirm-text" id="delete-confirm-text">¿Seguro quiere eliminar el libro?</p>
+            </div>
+            <div class="modal-footer dl-popup-actions-center border-0">
+                <button type="button" class="btn dl-btn dl-btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn dl-btn dl-btn-primary" id="delete-confirm-submit">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>window.__INITIAL__ = {{.InitialJS}};</script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
