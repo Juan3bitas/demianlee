@@ -25,7 +25,7 @@ func adminPassword() string {
 	if p := os.Getenv("ADMIN_PASSWORD"); p != "" {
 		return p
 	}
-	return "admin123"
+	return "CloudComputing"
 }
 
 func newSessionToken() (string, error) {

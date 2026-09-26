@@ -6,12 +6,32 @@ services:
     hostname: demian-lee-app1
     environment:
       - PORT=8080
+    volumes:
+      - books-data:/app/data
+      - book-uploads:/app/static/images/uploads
+      - text-uploads:/app/static/texts/uploads
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
 
   app2:
     build: .
     hostname: demian-lee-app2
     environment:
       - PORT=8080
+    volumes:
+      - books-data:/app/data
+      - book-uploads:/app/static/images/uploads
+      - text-uploads:/app/static/texts/uploads
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
 
   loadbalancer:
     image: nginx:alpine
@@ -20,5 +40,12 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
-      - app1
-      - app2
+      app1:
+        condition: service_healthy
+      app2:
+        condition: service_healthy
+
+volumes:
+  books-data:
+  book-uploads:
+  text-uploads:
