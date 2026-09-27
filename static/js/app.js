@@ -6,6 +6,7 @@
         isAdmin: !!(window.__INITIAL__ && window.__INITIAL__.isAdmin),
         hostname: (window.__INITIAL__ && window.__INITIAL__.hostname) || "",
         serverName: (window.__INITIAL__ && window.__INITIAL__.serverName) || "",
+        clientIP: (window.__INITIAL__ && window.__INITIAL__.clientIP) || "",
         view: "home", // home | detail | cover
         mode: "browse", // browse | select-edit | select-delete
         query: "",
@@ -50,7 +51,7 @@
 
     // ---------- Encabezado / pie de página ----------
     function renderChrome() {
-        document.getElementById("welcome-text").textContent = "Bienvenido, " + state.hostname;
+        document.getElementById("welcome-text").textContent = "Bienvenido, " + state.clientIP;
         document.getElementById("server-badge").textContent = "Servidor: " + state.serverName;
     }
 
