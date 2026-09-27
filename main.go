@@ -17,7 +17,6 @@ type PageData struct {
 	AppName    string
 	Host       string
 	ServerName string
-	ClientIP   string
 	InitialJS  template.JS
 }
 
@@ -30,7 +29,6 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	initial := map[string]interface{}{
 		"hostname":   getHostname(),
 		"serverName": getServerName(),
-		"clientIP":   getClientIP(r),
 		"isAdmin":    isAdminRequest(r),
 	}
 	initialJSON, err := json.Marshal(initial)
@@ -43,7 +41,6 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 		AppName:    "Debian Lee",
 		Host:       getHostname(),
 		ServerName: getServerName(),
-		ClientIP:   getClientIP(r),
 		InitialJS:  template.JS(initialJSON),
 	}
 
