@@ -4,83 +4,95 @@
     "titulo": "El Jugador",
     "autor": "Fiódor Dostoyevski",
     "anio": 1866,
-    "imagen": "/static/images/el-jugador.jpeg"
+    "imagen": "/static/images/el-jugador.jpeg",
+    "texto": "static/texts/el-jugador.pdf"
   },
   {
     "id": "2",
     "titulo": "El misterioso caso de Styles",
     "autor": "Agatha Christie",
     "anio": 1920,
-    "imagen": "/static/images/el-misterioso-caso-de-styles.jpg"
+    "imagen": "/static/images/el-misterioso-caso-de-styles.jpg",
+    "texto": "static/texts/el-misterioso-caso-de-styles.pdf"
   },
   {
     "id": "3",
     "titulo": "El perfume",
     "autor": "Patrick Süskind",
     "anio": 1985,
-    "imagen": "/static/images/el-perfume.jpg"
+    "imagen": "/static/images/el-perfume.jpg",
+    "texto": "static/texts/el-perfume.pdf"
   },
   {
     "id": "4",
     "titulo": "Linux Bible",
     "autor": "Christopher Negus",
     "anio": 2002,
-    "imagen": "/static/images/linux-bible.jpg"
+    "imagen": "/static/images/linux-bible.jpg",
+    "texto": "static/texts/linux-bible.pdf"
   },
   {
     "id": "5",
     "titulo": "Las venas abiertas de América Latina",
     "autor": "Eduardo Galeano",
     "anio": 1971,
-    "imagen": "/static/images/las-venas-abiertas-de-america-latina.jpg"
+    "imagen": "/static/images/las-venas-abiertas-de-america-latina.jpg",
+    "texto": "static/texts/las-venas-abiertas-de-america-latina.pdf"
   },
   {
     "id": "6",
     "titulo": "El mapa del alma según Jung",
     "autor": "Murray Stein",
     "anio": 2004,
-    "imagen": "/static/images/el-mapa-del-alma-segun-jung.jpg"
+    "imagen": "/static/images/el-mapa-del-alma-segun-jung.jpg",
+    "texto": "static/texts/el-mapa-del-alma-segun-jung.pdf"
   },
   {
     "id": "7",
     "titulo": "Star Wars Los Secretos de los Cazarrecompensas",
     "autor": "Marc Sumerak",
     "anio": 2023,
-    "imagen": "/static/images/star-wars-los-secretos-de-los-cazadores-de-recompensas.jpeg"
+    "imagen": "/static/images/star-wars-los-secretos-de-los-cazadores-de-recompensas.jpeg",
+    "texto": "static/texts/star-wars-los-secretos-de-los-cazadores-de-recompensas.txt"
   },
   {
     "id": "8",
     "titulo": "Dos veces Silvia",
     "autor": "Silvia Valencia",
     "anio": 2016,
-    "imagen": "/static/images/dos-veces-silvia.jpg"
+    "imagen": "/static/images/dos-veces-silvia.jpg",
+    "texto": "static/texts/Dos Veces Silvia.txt"
   },
   {
     "id": "9",
     "titulo": "Memoria de mis putas tristes",
     "autor": "Gabriel García Márquez",
     "anio": 2004,
-    "imagen": "/static/images/memoria-de-mis-putas-tristes.jpeg"
+    "imagen": "/static/images/memoria-de-mis-putas-tristes.jpeg",
+    "texto": "static/texts/memoria-de-mis-putas-tristes.pdf"
   },
   {
     "id": "10",
     "titulo": "La ciudad y los perros",
     "autor": "Mario Vargas Llosa",
     "anio": 1963,
-    "imagen": "/static/images/la-ciudad-y-los-perros.jpg"
+    "imagen": "/static/images/la-ciudad-y-los-perros.jpg",
+    "texto": "static/texts/la-ciudad-y-los-perros.pdf"
   },
   {
     "id": "11",
     "titulo": "Don Quijote de la Mancha",
     "autor": "Miguel de Cervantes",
     "anio": 1605,
-    "imagen": "/static/images/don-quijote-de-la-mancha.jpg"
+    "imagen": "/static/images/don-quijote-de-la-mancha.jpg",
+    "texto": "static/texts/el-quijote-de-la-mancha.pdf"
   },
   {
     "id": "12",
     "titulo": "Leyendas",
     "autor": "Gustavo Adolfo Bécquer",
     "anio": 1871,
-    "imagen": "/static/images/leyendas.jpg"
+    "imagen": "/static/images/leyendas.jpg",
+    "texto": "static/texts/leyendas.pdf"
   }
 ]
