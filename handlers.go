@@ -116,7 +116,6 @@ var allowedImageExt = map[string]bool{
 
 var allowedTextExt = map[string]bool{
 	".txt": true,
-	".pdf": true,
 }
 
 // Función saveUploadedCover: Guarda el archivo del campo "imagen" en static/images/uploads
@@ -163,7 +162,7 @@ func saveUploadedText(r *http.Request) (path string, provided bool, err error) {
 
 	ext := strings.ToLower(filepath.Ext(header.Filename))
 	if !allowedTextExt[ext] {
-		return "", true, fmt.Errorf("formato de archivo no soportado: %s (solo .txt o .pdf)", ext)
+		return "", true, fmt.Errorf("formato de archivo no soportado: %s (solo .txt)", ext)
 	}
 
 	filename := fmt.Sprintf("%d%s", time.Now().UnixNano(), ext)
@@ -185,7 +184,7 @@ func saveUploadedText(r *http.Request) (path string, provided bool, err error) {
 // Handler para crear libro
 
 func handleCreateBook(w http.ResponseWriter, r *http.Request) {
-	if err := r.ParseMultipartForm(30 << 20); err != nil {
+	if err := r.ParseMultipartForm(10 << 20); err != nil {
 		writeJSONError(w, http.StatusBadRequest, "No se pudo procesar el formulario")
 		return
 	}
@@ -266,7 +265,7 @@ func handleCreateBook(w http.ResponseWriter, r *http.Request) {
 func handleUpdateBook(w http.ResponseWriter, r *http.Request) {
 	id := r.PathValue("id")
 
-	if err := r.ParseMultipartForm(50 << 20); err != nil {
+	if err := r.ParseMultipartForm(10 << 20); err != nil {
 		writeJSONError(w, http.StatusBadRequest, "No se pudo procesar el formulario")
 		return
 	}
