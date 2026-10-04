@@ -1,86 +1,98 @@
 [
   {
     "id": "1",
-    "titulo": "El Jugador",
-    "autor": "Fiódor Dostoyevski",
-    "anio": 1866,
-    "imagen": "/static/images/el-jugador.jpeg"
-  },
-  {
-    "id": "2",
-    "titulo": "El misterioso caso de Styles",
-    "autor": "Agatha Christie",
-    "anio": 1920,
-    "imagen": "/static/images/el-misterioso-caso-de-styles.jpg"
-  },
-  {
-    "id": "3",
-    "titulo": "El perfume",
-    "autor": "Patrick Süskind",
-    "anio": 1985,
-    "imagen": "/static/images/el-perfume.jpg"
-  },
-  {
-    "id": "4",
-    "titulo": "Linux Bible",
-    "autor": "Christopher Negus",
-    "anio": 2002,
-    "imagen": "/static/images/linux-bible.jpg"
-  },
-  {
-    "id": "5",
-    "titulo": "Las venas abiertas de América Latina",
-    "autor": "Eduardo Galeano",
-    "anio": 1971,
-    "imagen": "/static/images/las-venas-abiertas-de-america-latina.jpg"
-  },
-  {
-    "id": "6",
-    "titulo": "El mapa del alma según Jung",
-    "autor": "Murray Stein",
-    "anio": 2004,
-    "imagen": "/static/images/el-mapa-del-alma-segun-jung.jpg"
-  },
-  {
-    "id": "7",
-    "titulo": "Star Wars Los Secretos de los Cazarrecompensas",
-    "autor": "Marc Sumerak",
-    "anio": 2023,
-    "imagen": "/static/images/star-wars-los-secretos-de-los-cazadores-de-recompensas.jpeg"
-  },
-  {
-    "id": "8",
-    "titulo": "Dos veces Silvia",
-    "autor": "Silvia Valencia",
-    "anio": 2016,
-    "imagen": "/static/images/dos-veces-silvia.jpg"
-  },
-  {
-    "id": "9",
-    "titulo": "Memoria de mis putas tristes",
-    "autor": "Gabriel García Márquez",
-    "anio": 2004,
-    "imagen": "/static/images/memoria-de-mis-putas-tristes.jpeg"
-  },
-  {
-    "id": "10",
-    "titulo": "La ciudad y los perros",
-    "autor": "Mario Vargas Llosa",
-    "anio": 1963,
-    "imagen": "/static/images/la-ciudad-y-los-perros.jpg"
-  },
-  {
-    "id": "11",
     "titulo": "Don Quijote de la Mancha",
     "autor": "Miguel de Cervantes",
     "anio": 1605,
-    "imagen": "/static/images/don-quijote-de-la-mancha.jpg"
+    "imagen": "/static/images/don-quijote-de-la-mancha.jpg",
+    "texto": "/static/texts/don-quijote-de-la-mancha.txt"
   },
   {
-    "id": "12",
+    "id": "2",
+    "titulo": "Dos veces Silvia",
+    "autor": "Silvia Valencia",
+    "anio": 2016,
+    "imagen": "/static/images/dos-veces-silvia.jpg",
+    "texto": "/static/texts/dos-veces-silvia.txt"
+  },
+  {
+    "id": "3",
+    "titulo": "El Jugador",
+    "autor": "Fiódor Dostoyevski",
+    "anio": 1866,
+    "imagen": "/static/images/el-jugador.jpeg",
+    "texto": "/static/texts/el-jugador.txt"
+  },
+  {
+    "id": "4",
+    "titulo": "El mapa del alma según Jung",
+    "autor": "Murray Stein",
+    "anio": 2004,
+    "imagen": "/static/images/el-mapa-del-alma-segun-jung.jpg",
+    "texto": "/static/texts/el-mapa-del-alma-segun-jung.txt"
+  },
+  {
+    "id": "5",
+    "titulo": "El misterioso caso de Styles",
+    "autor": "Agatha Christie",
+    "anio": 1920,
+    "imagen": "/static/images/el-misterioso-caso-de-styles.jpg",
+    "texto": "/static/texts/el-misterioso-caso-de-styles.txt"
+  },
+  {
+    "id": "6",
+    "titulo": "El perfume",
+    "autor": "Patrick Süskind",
+    "anio": 1985,
+    "imagen": "/static/images/el-perfume.jpg",
+    "texto": "/static/texts/el-perfume.txt"
+  },
+  {
+    "id": "7",
+    "titulo": "La ciudad y los perros",
+    "autor": "Mario Vargas Llosa",
+    "anio": 1963,
+    "imagen": "/static/images/la-ciudad-y-los-perros.jpg",
+    "texto": "/static/texts/la-ciudad-y-los-perros.txt"
+  },
+  {
+    "id": "8",
+    "titulo": "Las venas abiertas de América Latina",
+    "autor": "Eduardo Galeano",
+    "anio": 1971,
+    "imagen": "/static/images/las-venas-abiertas-de-america-latina.jpg",
+    "texto": "/static/texts/las-venas-abiertas-de-america-latina.txt"
+  },
+  {
+    "id": "9",
     "titulo": "Leyendas",
     "autor": "Gustavo Adolfo Bécquer",
     "anio": 1871,
-    "imagen": "/static/images/leyendas.jpg"
+    "imagen": "/static/images/leyendas.jpg",
+    "texto": "/static/texts/leyendas.txt"
+  },
+  {
+    "id": "10",
+    "titulo": "Linux Bible",
+    "autor": "Christopher Negus",
+    "anio": 2002,
+    "imagen": "/static/images/linux-bible.jpg",
+    "texto": "/static/texts/linux-bible.txt"
+  },
+  {
+    "id": "11",
+    "titulo": "Memoria de mis putas tristes",
+    "autor": "Gabriel García Márquez",
+    "anio": 2004,
+    "imagen": "/static/images/memoria-de-mis-putas-tristes.jpeg",
+    "texto": "/static/texts/memoria-de-mis-putas-tristes.txt"
+  },
+  {
+    "id": "12",
+    "titulo": "Star Wars Los Secretos de los Cazarrecompensas",
+    "autor": "Marc Sumerak",
+    "anio": 2023,
+    "imagen": "/static/images/star-wars-los-secretos-de-los-cazadores-de-recompensas.jpeg",
+    "texto": "/static/texts/star-wars-los-secretos-de-los-cazadores-de-recompensas.txt"
   }
 ]
