@@ -1,0 +1,3 @@
+Linux Bible
+
+La octava edición de la Linux Bible se enfoca en enseñar Linux de manera practica, con un énfasis en el "aprender haciendo". El libro ha sido renovado para guiar a los usuarios desde principiantes hasta profesionales certificados, centrándose en la administración del sistema (cubriendo temas relevantes para la certificación Red Hat Certified Engineer (RHCE)), el uso intensivo de la línea de comandos, y la administración de menos distribuciones de Linux, principalmente las basadas en Red Hat (Fedora, RHEL), con referencias a Ubuntu. Incluye numerosas demostraciones y ejercicios probados en Fedora o RHEL.

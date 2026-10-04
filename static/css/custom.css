@@ -1,5 +1,7 @@
 /* ============================================================
    Debian Lee - Tema sobre Bootstrap 5
+   El azul del encabezado/pie de página (--dl-blue) se conserva
+   siempre. El resto de la paleta se deriva armónicamente de él.
    ============================================================ */
 
 :root {
